@@ -1,0 +1,9 @@
+<h3>Only Show Even Numbers</h3>
+<p>{{numbersData | json }}</p>
+<hr />
+<h3>Only Show Cities start with letter 'S'</h3>
+<p>{{citiesData | json }}</p>
+<hr />
+<h2>Dynamic filtering by entering input text</h2>
+<input type="text" [formControl]="myFormControl" class="input-lg" />
+<p>{{citiesReactiveData | json }}</p>
