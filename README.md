@@ -1,2 +1,2 @@
 # Angular-RXJS
-RXJS Snippets
+RXJS Snippets version 6+
