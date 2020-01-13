@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { merge, Observable, forkJoin } from 'rxjs';
+import { merge, Observable, forkJoin, concat } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 
 // constants that are used as pointers to some json-data
@@ -12,6 +12,12 @@ export class DataService {
 
   constructor(private http: HttpClient) {
 
+  }
+
+  getConcatData(): Observable<any> {
+    const authors = this.http.get(AUTHORS).pipe(delay(3000));
+    const books = this.http.get(BOOKS).pipe(delay(1000));
+    return concat(authors, books);
   }
 
   getMergeData(): Observable<any> {
